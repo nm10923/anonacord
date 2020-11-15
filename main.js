@@ -8,11 +8,6 @@ const serverDb = new Sequelize('database', 'user', 'password', {
 	storage: 'serverDb.sqlite',
 });
 const serverDbTags = serverDb.define('serverDbTags', {
-//	serverId: {
-//		type: Sequelize.INTEGER,
-//		defaultValue: 0,
-//		allowNull: false,
-//	}
 		serverId: Sequelize.STRING,
 });
 const userDb = new Sequelize('database', 'user', 'password', {
@@ -28,11 +23,6 @@ const userDbTags = userDb.define('userDbTags', {
 		defaultValue: 0,
 		allowNull: false,
 	},
-//	serverId: {
-//		type: Sequelize.INTEGER,
-//		defaultValue: 0,
-//		allowNull: false,
-//	}
 	serverId: Sequelize.STRING, 
 	userId: Sequelize.STRING,
 });
@@ -68,43 +58,6 @@ client.on('message', message => {
 	if(!message.content.startsWith(prefix) || message.author.bot) return;
 	const args = message.content.slice(prefix.length).split(/ +/);
 	const command = args.shift().toLowerCase();
-//	if (command === 'init') {
-//		client.commands.get('init').execute(message, args, serverDbTags, userDbTags);
-//		async function functionInit(message, args, serverDbTags, userDbTags) {
-//		if (args[0] === 0) {
-//			message.reply("Input a server ID! Need help? Your gay!");
-//		}
-//		else {
-//
-//			message.reply(`Searching for server with ID: ${args[0]}`);
-//			async function functionServerfind() {
-//				const serverFind = serverDbTags.findOne({ where: {serverId: args[0]} });	
-//			}
-//			console.log(serverFind)
-//			const randomTagNum = Math.floor(Math.random() * 100000) + 99999;
-//			const username = message.author.username
-//			if (serverFind) {
-	//			try {
-	//				const tag = userDbTags.create({ 
-	//					username: username,
-	//					tagNum: randomTagNum,
-	//					serverId: args,
-	//				});
-	//			return message.reply(`Username: ${tag.username}\nTag: ${tag.tagNum}\nServer ID: ${args[0]}`);
-	//			} catch (e) { 
-	//				if (e.name === 'SequelizeUniqueConstraintError') {
-	//					return message.reply("You already have a tag! Do you wanna reset a tag? Try a!reset-tag.");
-	//				}
-	//			}
-//	//			return message.reply(`Username: ${tag.username}\nTag: ${tag.tagNum}\nServer ID: ${args[0]}`);
-	//	 	}
-	//	}
-//			else {
-//				return message.reply('Server ID not found.');
-//			}
-//		 return message.reply('error: something went wrong, please try again!');
-//		}
-//	}		
 	if (command === 'accept') {
 		async function serverIdFetch() {
 			try  {
@@ -125,8 +78,8 @@ client.on('message', message => {
 			message.reply("You are not an Adminstrator");
 		}
 	}
-	else if  (command === 'init2') {
-		client.commands.get('init2').execute(message, args, serverDbTags, userDbTags);
+	else if (command === 'init') {
+		client.commands.get('init').execute(message, args, serverDbTags, userDbTags);
 	}
 	else if (command === 'help') {
 		message.author.send('List of Commands:\na!help: sends this message\na!init: assigns a random tag number to you');
