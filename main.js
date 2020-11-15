@@ -34,7 +34,7 @@ for (const file of commandFiles){
 	    const command = require(`./${file}`); 
 	    client.commands.set(command.name, command);
 }
-client.login('NzcyNjA0NDg2NzUzMzIwOTYx.X59F_w.6B1oRMIy7echqh6Aa7yhFX7PfFA');
+client.login('BOT_TOKEN');
 client.once('ready', () => {
 	serverDbTags.sync();
 	userDbTags.sync();
