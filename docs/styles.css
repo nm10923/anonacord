@@ -5,12 +5,10 @@ html {
 body {
 	height: 100%;
 	background-color: #252525;
-	position: fixed;
 
 }
 .textBody {
 	font-family: Verdana, Helvetica, sans-serif;
-	position: relative;
 	text-color: #FFFFFF;
  	background-color: #3F4246;
 	text-align: center;
