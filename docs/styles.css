@@ -7,9 +7,15 @@ body {
 	background-color: #252525;
 
 }
+h1 {
+	text-color: ffffff;
+}
+p {
+	text-color: ffffff;
+}
 .textBody {
 	font-family: Verdana, Helvetica, sans-serif;
-	text-color: #FFFFFF;
+	text-color: #ffffff;
  	background-color: #3F4246;
 	text-align: center;
 	margin: auto;
